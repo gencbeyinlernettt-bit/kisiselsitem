@@ -1,6 +1,7 @@
 import React from 'react';
 import { Plus, ExternalLink, Search, CheckCircle2, Clock } from 'lucide-react';
 import { WeeklyProject } from '../types';
+import logoImg from '../assets/images/logo.webp';
 
 interface HeaderProps {
   activeProject: WeeklyProject;
@@ -26,20 +27,16 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between px-4 lg:px-6 py-3 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
       {/* Zone 1: Wordmark / Brand Title */}
-      <div className="flex items-center gap-3 shrink-0">
-        <div className="relative">
+      <div className="flex items-center gap-3.5 shrink-0">
+        <div className="relative flex items-center justify-center w-11 h-11 bg-white rounded-full border border-slate-200 shadow-xs ring-2 ring-red-500/10 hover:ring-red-500/25 hover:shadow-md transition-all duration-300 group shrink-0 p-1">
           <img
-            src="/src/assets/images/avatar_burak_profile_1790235191569.jpg"
-            alt="Burak TURGUT"
-            referrerPolicy="no-referrer"
-            className="w-10 h-10 rounded-full object-cover border-2 border-slate-200 shadow-xs"
-            onError={(e) => {
-              (e.currentTarget as HTMLElement).style.display = 'none';
-            }}
+            src={logoImg}
+            alt="Milli Eğitim Bakanlığı Logosu"
+            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <div
-            className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"
-            title="Aktif"
+            className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full shadow-xs"
+            title="Aktif Sistem"
           />
         </div>
 
